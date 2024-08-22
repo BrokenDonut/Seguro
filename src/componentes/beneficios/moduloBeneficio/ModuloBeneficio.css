@@ -1,0 +1,27 @@
+.img-beneficio{
+    width: 320px;
+    border-radius: 20px;
+}
+.containet-bene{
+    width: 320px;
+    padding: 10px;
+    padding-bottom: 20px;
+    border: 2px solid #cdd1ee;
+    border-radius: 30px;
+    display: flex;
+}
+.cont-bene{
+    display: flex;
+    justify-content: space-between;
+}
+.content-icons{
+    display: flex;
+    padding: 10px 20px;
+}
+.icons-ubi{
+    display: flex;
+    flex-direction: column;
+}
+.text-bene{
+    padding: 0px 10px;
+}

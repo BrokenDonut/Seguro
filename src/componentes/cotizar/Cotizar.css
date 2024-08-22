@@ -1,0 +1,144 @@
+.container-cotizar {
+  display: flex;
+  justify-content: center;
+  column-gap: 80px;
+  margin: 50px 0px;
+}
+
+.container-cotizar img {
+  border-radius: 35px;
+  height: 418px;
+  width: 626px;
+}
+.cotizar-text {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  row-gap: 20px;
+}
+.input-cotizar {
+  font-size: 18px;
+  height: 30px;
+  border: 1px solid #555;
+  border-radius: 9px;
+  padding: 10px 25px;
+}
+.cotizar-parrafo1 {
+  font-weight: 600;
+}
+.parrafo-line {
+  border-top: 1px solid #555;
+  padding-top: 15px;
+}
+.cotizar-parrafo2 {
+  font-size: 14px;
+}
+.container-check {
+  display: flex;
+  column-gap: 10px;
+  align-items: flex-start;
+}
+.btn-cotizar {
+  height: 60px;
+  font-size: 24px;
+  width: 200px;
+  border-radius: 30px;
+}
+.cotizar-select {
+  height: 50px;
+}
+.form-cotizar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.container-registrer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.69);
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.registrar-car {
+  background-color: white;
+  display: grid;
+  padding: 15px;
+  border-radius: 20px;
+  width: 550px;
+}
+.registrar-car a {
+  justify-self: end;
+  text-decoration: none;
+  color: #3b99cc;
+  font-weight: 600;
+}
+.car-icon {
+  font-size: 70px;
+  color: #3b99cc;
+  padding: 20px 0px;
+}
+.placa {
+  color: #3b99cc;
+  padding-bottom: 40px;
+}
+
+.containt-form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containt-form-register h1 {
+  font-weight: 600;
+}
+.form-register {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.input-register {
+  display: flex;
+  flex-direction: column;
+  color: rgb(158 158 158);
+  row-gap: 10px;
+}
+.form-register-placa {
+  width: 500px;
+  display: grid;
+}
+.input-register input {
+  border: none;
+  border-bottom: 1px solid rgb(104, 104, 104);
+  width: 150px;
+  height: 30px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+}
+.input-serie input {
+  width: 100% !important;
+}
+.btn-save {
+  margin: 30px 0px;
+  width: 200px;
+  height: 50px;
+  justify-self: center;
+  border-radius: 20px;
+}
+.form-parrafo-register{
+  font-size: 20px;
+
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+.containt-btn{
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+}

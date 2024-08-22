@@ -1,0 +1,55 @@
+.container-modulo-poliza{
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.body-poliza{
+    display: flex;
+    justify-content: space-between;
+}
+.separacion-containt{
+    padding: 50px 0px;
+}
+.cont-info-car-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+}
+.car-poliza{
+    font-size: 50px;
+}
+.line{
+    border-left: 1px solid black;
+    height: 70px;
+}
+.info-car-front{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    text-align: start;
+    line-height: 25px;
+}
+.placa-name{
+    font-weight: 600;
+}
+.select-cobertura{
+    border: 1px solid rgb(190, 190, 190);
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+}
+.total-poliza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-pagar{
+    height: 60px;
+    width: 400px;
+    border-radius: 30px;
+    font-size: 20px;
+}

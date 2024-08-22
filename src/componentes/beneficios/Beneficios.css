@@ -1,0 +1,10 @@
+.cont-bene{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.content-modbene{
+    padding-top: 40px;
+    display: flex;
+    column-gap: 30px;
+}

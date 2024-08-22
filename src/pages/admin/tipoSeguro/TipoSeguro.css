@@ -1,0 +1,95 @@
+.tipoSeguro-container {
+    padding: 20px;
+}
+.titulo-formCA{
+    text-align: center;
+}
+.tipoSeguro-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tipoSeguro-table th, .tipoSeguro-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tipoSeguro-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+.form-CA{
+    margin: 20px 0px;
+    height: 250px;
+}
+.input-align{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+.input-deco{
+    width: 250px;
+    font-size: 16px;
+    padding: 8px 5px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.btn-creaActu{
+    border: none;
+    width: 300px;
+    padding: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(69, 187, 196);
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.4s;
+}
+.btn-creaActu:hover{
+    background-color: rgb(56, 151, 158);
+    box-shadow: 0px 0px 8px 0px black;
+}
+.btn-actu{
+    width: 100px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    background-color: #ffce2b;
+    cursor: pointer;
+}
+.btn-actu:hover{
+    background-color: #f7ca36;
+    box-shadow: 0px 0px 5px 0px black;
+}
+.btn-delete{
+    width: 100px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    background-color: #d13549;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-delete:hover{
+    background-color: #b82f41;
+    box-shadow: 0px 0px 5px 0px black;
+}
+.btn-crear{
+    width: 150px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    height:40px;
+    background-color: #376ffd;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+.btn-crear:hover{
+    background-color: #3364e2;
+    box-shadow: 0px 0px 5px 0px black;
+}

@@ -1,0 +1,42 @@
+.containt-slidebar {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    width: 100%;
+}
+
+.slidebar {
+    width: 200px;
+    height: 900px;
+    box-shadow: 5px 0px 15px 0px gray; 
+    padding: 0px 15px;
+    
+}
+
+.slidebar-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+    font-size: 23px;
+}
+
+.slidebar-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.slidebar-option a {
+    padding: 15px 0px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.slidebar-option a:hover {
+    background-color: rgb(216, 216, 216);
+    border-radius: 5px;
+}
+.table-container{
+    justify-self: center;
+}
+

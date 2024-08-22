@@ -1,0 +1,18 @@
+.persona-container {
+    padding: 20px;
+}
+
+.persona-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.persona-table th, .persona-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.persona-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}

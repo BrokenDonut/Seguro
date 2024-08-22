@@ -1,0 +1,11 @@
+.container-footer{
+    background-color: black;
+    color: #fff;
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-footer img{
+    height: 100px;
+}

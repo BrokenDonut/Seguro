@@ -1,0 +1,13 @@
+.container-proteccion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 40px;
+    padding: 60px 0px;
+}
+.group-modulo{
+    display: flex;
+    column-gap: 30px;
+}
