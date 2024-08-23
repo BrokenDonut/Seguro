@@ -16,3 +16,13 @@
     background-color: #f4f4f4;
     text-align: left;
 }
+.grafica-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.barras-data{
+    margin-top: 30px;
+}
+.mostrar-precio{
+    text-align: center;
+}
