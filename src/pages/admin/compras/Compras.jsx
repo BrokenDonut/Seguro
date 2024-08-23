@@ -3,24 +3,43 @@ import './Compras.css';
 
 export default function Compras() {
     const [compras, setCompras] = useState([]);
+    const [tipoSeguros, setTipoSeguros] = useState([]);
     const apiUrlCompras = 'http://localhost:5287/api/Compras';
+    const apiUrlTipoSeguro = 'http://localhost:5287/api/TipoSeguroes';
 
     useEffect(() => {
-        const fetchCompras = async () => {
+        const fetchData = async () => {
             try {
-                const response = await fetch(apiUrlCompras);
-                if (!response.ok) {
+                // Obtener las compras
+                const responseCompras = await fetch(apiUrlCompras);
+                if (!responseCompras.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data = await response.json();
-                setCompras(data);
+                const dataCompras = await responseCompras.json();
+
+                // Obtener los tipos de seguro
+                const responseTipoSeguro = await fetch(apiUrlTipoSeguro);
+                if (!responseTipoSeguro.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const dataTipoSeguro = await responseTipoSeguro.json();
+
+                // Guardar datos en el estado
+                setCompras(dataCompras);
+                setTipoSeguros(dataTipoSeguro);
             } catch (error) {
-                console.error('Error fetching compras:', error);
+                console.error('Error fetching data:', error);
             }
         };
 
-        fetchCompras();
-    }, [apiUrlCompras]);
+        fetchData();
+    }, [apiUrlCompras, apiUrlTipoSeguro]);
+
+    // Función para obtener el precio del seguro basado en TipoSeguroId
+    const obtenerPrecioSeguro = (tipoSeguroId) => {
+        const seguro = tipoSeguros.find((seguro) => seguro.id === tipoSeguroId);
+        return seguro ? seguro.precio : 'N/A';
+    };
 
     return (
         <div className="compras-container">
@@ -30,20 +49,20 @@ export default function Compras() {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Fecha</th>
-                            <th>Proveedor</th>
-                            <th>Monto</th>
-                            <th>Detalle</th>
+                            <th>Fecha de Compra</th>
+                            <th>ID del Auto</th>
+                            <th>ID del Seguro</th>
+                            <th>Precio de Póliza</th>
                         </tr>
                     </thead>
                     <tbody>
                         {compras.map(compra => (
                             <tr key={compra.id}>
                                 <td>{compra.id}</td>
-                                <td>{compra.fecha}</td>
-                                <td>{compra.proveedor}</td>
-                                <td>{compra.monto}</td>
-                                <td>{compra.detalle}</td>
+                                <td>{compra.fechaCompra}</td>
+                                <td>{compra.autoId}</td>
+                                <td>{compra.tipoSeguroId}</td>
+                                <td>{obtenerPrecioSeguro(compra.tipoSeguroId)}</td>
                             </tr>
                         ))}
                     </tbody>

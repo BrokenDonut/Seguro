@@ -16,7 +16,7 @@ export default function Cotizar() {
   const [placa, setPlaca] = useState("");
 
   const apiUrlPersona = "http://localhost:5287/api/Personas";
-  const apiUrlAuto = "http://localhost:5287/api/Autos";
+  const apiUrlAuto = "http://localhost:5287/api/Autoes";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,18 +29,35 @@ export default function Cotizar() {
     } else {
       try {
         const response = await fetch(`${apiUrlAuto}?serie=${placaInput}`);
+
+        if (response.status === 404) {
+          alert("Placa no encontrada. Registra tu vehículo.");
+          setShowRegister(true);
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         console.log("Respuesta de la API:", data);
 
-        if (Array.isArray(data) && data.length > 0) {
-          navigate("/poliza"); // Redirige a /poliza si la placa existe
+        const matchingVehicle = data.find(
+          (vehicle) => vehicle.serie === placaInput
+        );
+
+        if (matchingVehicle) {
+          const autoId = matchingVehicle.id;
+          navigate(`/${autoId}/poliza`);
         } else {
-          setShowRegister(true); // Muestra el formulario de registro si la placa no existe
+          setShowRegister(true);
         }
       } catch (error) {
         console.error("Error al verificar la placa:", error);
-        setShowRegister(true); // Muestra el formulario de registro en caso de error
+        alert("Ocurrió un error al verificar la placa. Intenta nuevamente.");
+        setShowRegister(true);
       }
     }
   };
@@ -63,13 +80,13 @@ export default function Cotizar() {
           nombre,
           apellido,
           fechaNacimiento,
-          email: correo, // Asegúrate de que la clave coincida con el nombre en la tabla
+          email: correo,
         }),
       });
 
       if (response.ok) {
         alert("Persona registrada con éxito");
-        setShowAutoForm(true); // Muestra el formulario de autos
+        setShowAutoForm(true);
       } else {
         alert("Error al registrar la persona");
       }
@@ -84,9 +101,15 @@ export default function Cotizar() {
 
     try {
       const personaResponse = await fetch(`${apiUrlPersona}?email=${correo}`);
+      if (!personaResponse.ok) {
+        throw new Error(`HTTP error! status: ${personaResponse.status}`);
+      }
+      
       const personaData = await personaResponse.json();
-
-      if (personaData && personaData.id) {
+      
+      if (Array.isArray(personaData) && personaData.length > 0) {
+        const personaId = personaData[0].id;
+        
         const response = await fetch(apiUrlAuto, {
           method: "POST",
           headers: {
@@ -97,7 +120,7 @@ export default function Cotizar() {
             modelo,
             anio,
             serie: placa,
-            personaId: personaData.id,
+            personaId: personaId,
           }),
         });
 
@@ -114,6 +137,7 @@ export default function Cotizar() {
       alert("Error al registrar el vehículo");
     }
   };
+
 
   return (
     <div className="container-cotizar">
@@ -214,7 +238,7 @@ export default function Cotizar() {
                       className="buton-acceso btn-save"
                       onClick={() => {
                         setShowAutoForm(true);
-                        setShowRegister(false); // Oculta el formulario de registro de datos
+                        setShowRegister(false);
                       }}
                     >
                       Registrar Vehículo
